@@ -74,11 +74,11 @@ handleChangeOfScreen=()=>{
         <View style={styles.container}>
         
 
-        <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false} automaticallyAdjustKeyboardInsets={false}>
+        
         
         
         <Weather  myNav={handleChangeOfScreen} myUpdate={getUpdated} size={handleSize} mycityName={route.params.getCity} background={backgroundHandler} selectedUnit={route.params.tmepType} myData={handleData} myData2={handleData} added={handleAddition}/>
-        </ScrollView>
+        
 
         </View>
         </SafeAreaView>

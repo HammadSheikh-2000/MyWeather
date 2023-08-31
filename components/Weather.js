@@ -38,6 +38,7 @@ const Weather = (props) => {
     
     
     async function getWeatherData(cityName,myVal){
+        
         setloading(true);
         const API=`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_Key}&units=${myVal}`;
         let res=await fetch(API);
@@ -62,18 +63,18 @@ const Weather = (props) => {
                 
                 
                 var search_string = cityName;
-                console.log('Searching Outside: '+search_string)
+               
     
                 var matchingLocations = newPosts.filter(function(location) {
-                    console.log('Inside: '+location.title.includes(search_string))
+                    
                     return location.title.includes(search_string);
                 });
-                console.log('Inside: '+matchingLocations.length)
+                
                 if (matchingLocations.length > 0) {
-                    console.log('working1');
+                   
                     SetStarState(true);
                 } else {
-                    console.log('working2');
+                   
                     SetStarState(false);
                 }
                 })
@@ -118,7 +119,7 @@ const Weather = (props) => {
     {
         return(
             <ImageBackground style={{flex:1,height:Dimensions.get('screen').height}} resizeMode="cover" source={getMyImage}>
-            <ActivityIndicator size={"large"}/>
+            <ActivityIndicator style={styles.ActivityStyle} size={"large"}/>
             </ImageBackground>
             
         );
@@ -180,6 +181,7 @@ const Weather = (props) => {
         
         return ( 
             <View>
+            <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false} automaticallyAdjustKeyboardInsets={false}>
             <View style={{flexDirection:"row"}}>
                 <View style={{ justifyContent: 'center', alignItems: 'center', paddingTop: 20, paddingLeft: 20,}}>
                         {starState ? 
@@ -193,9 +195,11 @@ const Weather = (props) => {
             </View>
             </View>
             
+                <View>
 
                 <Text style={styles.city}>{WeatherData.city.name}</Text>
                 <TopWeatherIcon imageSetting={handleImage} data={WeatherData}/>
+                </View>
                 <View>
                     <Text style={styles.degree}>{Math.round(WeatherData.list[0].main.temp)}°{unitCheck()}</Text>
                     
@@ -225,6 +229,7 @@ const Weather = (props) => {
                 </View>
 
                 </View>
+            </ScrollView>
             </View>
          );
     }
@@ -240,6 +245,13 @@ const styles=StyleSheet.create({
 
 
     },
+    ActivityStyle:{
+        flex:1,
+        justifyContent:"center",
+        alignContent:"center",
+        alignItems:"center",
+        alignSelf:"center"
+      },
     bottomText:{
         //marginLeft:10,
         fontSize:23,
