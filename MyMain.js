@@ -65,21 +65,11 @@ handleChangeOfScreen=()=>{
 }
     return ( 
         <View>
-        
-        <ImageBackground style={styles.container}  resizeMode='cover' source={mybackImag} blurRadius={40} >
-
-            
+        <ImageBackground resizeMode='cover' source={mybackImag} blurRadius={40} >
         <SafeAreaView style={{backgroundColor:mybackImag}}>
         <StatusBar barStyle="default"/>
-        <View style={styles.container}>
-        
-
-        
-        
-        
-        <Weather  myNav={handleChangeOfScreen} myUpdate={getUpdated} size={handleSize} mycityName={route.params.getCity} background={backgroundHandler} selectedUnit={route.params.tmepType} myData={handleData} myData2={handleData} added={handleAddition}/>
-        
-
+        <View>
+        <Weather  myNav={handleChangeOfScreen} myUpdate={getUpdated} size={handleSize} background={backgroundHandler} myData={handleData} myData2={handleData} added={handleAddition}/>
         </View>
         </SafeAreaView>
         </ImageBackground>
@@ -87,16 +77,7 @@ handleChangeOfScreen=()=>{
      );
 }
 const styles = StyleSheet.create({
-    container: {
-      //flex: 1,
-      //backgroundColor: '#fff',
-      //alignItems: 'center',
-      //justifyContent: 'center',
-      //width: Dimensions.get('screen').width,
-      //height: Dimensions.get('screen').height,
-    },
     myBackground:{
-      //flex:1,
       width: Dimensions.get('screen').width,
       height: Dimensions.get('screen').height,
     }

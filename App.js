@@ -8,6 +8,10 @@ import Weather from './components/Weather';
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import{NavigationContainer} from '@react-navigation/native'
 import MyMain from './MyMain';
+import { Provider } from 'react-redux';
+import store from './components/redux/storeRedux';
+
+
 
 
 
@@ -15,6 +19,9 @@ import MyMain from './MyMain';
 export default function App() {
 const Stack=createNativeStackNavigator();
   return (
+    <Provider store={store}>
+
+    
     <NavigationContainer>
       <Stack.Navigator  screenOptions={{
         headerStyle: {
@@ -34,6 +41,7 @@ const Stack=createNativeStackNavigator();
         
       </Stack.Navigator>
     </NavigationContainer>
+    </Provider>
   );
 }
 

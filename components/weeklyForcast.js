@@ -29,215 +29,142 @@ const WeekForecast = (props) => {
     if(props.myData.list[0].weather[0].main=='Clouds')
     {
         setSmallIcon0(iconobi.clouds);
-        //console.log(iconobi.clouds);
-        //setImage(cloud_day);
-        //isDayTime ? setImage(cloud_day) : setImage(cloud_night);
     }
     else if(props.myData.list[0].weather[0].main=='Snow')
     {
         setSmallIcon0(iconobi.snow);
-        //setImage(snow_day);
-        //isDayTime ? setImage(snow_day) : setImage(snow_night);
     }
     else if(props.myData.list[0].weather[0].main=='Clear')
     {
         setSmallIcon0(iconobi.clear);
-        //setImage(clear_day);
-        //isDayTime ? setImage(clear_day) : setImage(clear_night);
     }
     else if(props.myData.list[0].weather[0].main=='Rain')
     {
         setSmallIcon0(iconobi.rainy);
-        //setImage(rain_day);
-        //isDayTime ? setImage(rain_day) : setImage(rain_day);
     }
     else if(props.myData.list[0].weather[0].main=='Smoke')
     {
         setSmallIcon0(iconobi.smoke);
-        //setImage(snow_day);
-        //isDayTime ? setImage(haze_day) : setImage(haze_night);
     }
     else if(props.myData.list[0].weather[0].main=='Haze')
     {
         setSmallIcon0(iconobi.haze);
-        //setImage(snow_day);
-        //isDayTime ? setImage(haze_day) : setImage(haze_night);
     }
     else{
         setSmallIcon0(iconobi.clear);
-        //isDayTime ? setImage(clear_day) : setImage(clear_night);
     }
 
     //2
     if(props.myData.list[8].weather[0].main=='Clouds')
     {
         setSmallIcon1(iconobi.clouds);
-        //console.log(iconobi.clouds);
-        //setImage(cloud_day);
-        //isDayTime ? setImage(cloud_day) : setImage(cloud_night);
     }
     else if(props.myData.list[8].weather[0].main=='Snow')
     {
         setSmallIcon1(iconobi.snow);
-        //setImage(snow_day);
-        //isDayTime ? setImage(snow_day) : setImage(snow_night);
     }
     else if(props.myData.list[8].weather[0].main=='Clear')
     {
         setSmallIcon1(iconobi.clear);
-        //setImage(clear_day);
-        //isDayTime ? setImage(clear_day) : setImage(clear_night);
     }
     else if(props.myData.list[8].weather[0].main=='Rain')
     {
         setSmallIcon1(iconobi.rainy);
-        //setImage(rain_day);
-        //isDayTime ? setImage(rain_day) : setImage(rain_day);
     }
     else if(props.myData.list[8].weather[0].main=='Smoke')
     {
         setSmallIcon1(iconobi.smoke);
-        //setImage(snow_day);
-        //isDayTime ? setImage(haze_day) : setImage(haze_night);
     }
     else if(props.myData.list[8].weather[0].main=='Haze')
     {
         setSmallIcon1(iconobi.haze);
-        //setImage(snow_day);
-        //isDayTime ? setImage(haze_day) : setImage(haze_night);
     }
     else{
         setSmallIcon1(iconobi.clear);
-        //isDayTime ? setImage(clear_day) : setImage(clear_night);
     }
-    //3
     if(props.myData.list[16].weather[0].main=='Clouds')
     {
         setSmallIcon2(iconobi.clouds);
-        //console.log(iconobi.clouds);
-        //setImage(cloud_day);
-        //isDayTime ? setImage(cloud_day) : setImage(cloud_night);
     }
     else if(props.myData.list[16].weather[0].main=='Snow')
     {
         setSmallIcon2(iconobi.snow);
-        //setImage(snow_day);
-        //isDayTime ? setImage(snow_day) : setImage(snow_night);
     }
     else if(props.myData.list[16].weather[0].main=='Clear')
     {
         setSmallIcon2(iconobi.clear);
-        //setImage(clear_day);
-        //isDayTime ? setImage(clear_day) : setImage(clear_night);
     }
     else if(props.myData.list[16].weather[0].main=='Rain')
     {
         setSmallIcon2(iconobi.rainy);
-        //setImage(rain_day);
-        //isDayTime ? setImage(rain_day) : setImage(rain_day);
     }
     else if(props.myData.list[16].weather[0].main=='Smoke')
     {
         setSmallIcon2(iconobi.smoke);
-        //setImage(snow_day);
-        //isDayTime ? setImage(haze_day) : setImage(haze_night);
     }
     else if(props.myData.list[16].weather[0].main=='Haze')
     {
         setSmallIcon2(iconobi.haze);
-        //setImage(snow_day);
-        //isDayTime ? setImage(haze_day) : setImage(haze_night);
     }
     else{
         setSmallIcon2(iconobi.clear);
-        //isDayTime ? setImage(clear_day) : setImage(clear_night);
     }
-    //4
     if(props.myData.list[24].weather[0].main=='Clouds')
     {
         setSmallIcon3(iconobi.clouds);
-        //console.log(iconobi.clouds);
-        //setImage(cloud_day);
-        //isDayTime ? setImage(cloud_day) : setImage(cloud_night);
     }
     else if(props.myData.list[24].weather[0].main=='Snow')
     {
         setSmallIcon3(iconobi.snow);
-        //setImage(snow_day);
-        //isDayTime ? setImage(snow_day) : setImage(snow_night);
     }
     else if(props.myData.list[24].weather[0].main=='Clear')
     {
         setSmallIcon3(iconobi.clear);
-        //setImage(clear_day);
-        //isDayTime ? setImage(clear_day) : setImage(clear_night);
     }
     else if(props.myData.list[24].weather[0].main=='Rain')
     {
         setSmallIcon3(iconobi.rainy);
-        //setImage(rain_day);
-        //isDayTime ? setImage(rain_day) : setImage(rain_day);
     }
     else if(props.myData.list[24].weather[0].main=='Smoke')
     {
         setSmallIcon3(iconobi.smoke);
-        //setImage(snow_day);
-        //isDayTime ? setImage(haze_day) : setImage(haze_night);
     }
     else if(props.myData.list[24].weather[0].main=='Haze')
     {
         setSmallIcon3(iconobi.haze);
-        //setImage(snow_day);
-        //isDayTime ? setImage(haze_day) : setImage(haze_night);
     }
     else{
         setSmallIcon0(iconobi.clear);
-        //isDayTime ? setImage(clear_day) : setImage(clear_night);
     }
-    //5
     if(props.myData.list[32].weather[0].main=='Clouds')
     {
         setSmallIcon4(iconobi.clouds);
-        //console.log(iconobi.clouds);
-        //setImage(cloud_day);
-        //isDayTime ? setImage(cloud_day) : setImage(cloud_night);
     }
     else if(props.myData.list[32].weather[0].main=='Snow')
     {
         setSmallIcon4(iconobi.snow);
-        //setImage(snow_day);
-        //isDayTime ? setImage(snow_day) : setImage(snow_night);
     }
     else if(props.myData.list[32].weather[0].main=='Clear')
     {
         setSmallIcon4(iconobi.clear);
-        //setImage(clear_day);
-        //isDayTime ? setImage(clear_day) : setImage(clear_night);
     }
     else if(props.myData.list[32].weather[0].main=='Rain')
     {
         setSmallIcon4(iconobi.rainy);
-        //setImage(rain_day);
-        //isDayTime ? setImage(rain_day) : setImage(rain_day);
     }
     else if(props.myData.list[32].weather[0].main=='Smoke')
     {
         setSmallIcon4(iconobi.smoke);
-        //setImage(snow_day);
-        //isDayTime ? setImage(haze_day) : setImage(haze_night);
     }
     else if(props.myData.list[32].weather[0].main=='Haze')
     {
         setSmallIcon4(iconobi.haze);
-        //setImage(snow_day);
-        //isDayTime ? setImage(haze_day) : setImage(haze_night);
     }
     else{
         setSmallIcon4(iconobi.clear);
-        //isDayTime ? setImage(clear_day) : setImage(clear_night);
     }
     },[])
-    ///Working Directory
+
 
     const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
             const d = new Date();
@@ -325,20 +252,15 @@ const styles=StyleSheet.create({
     forcast:{
         width:100,
         height:180,
-        //backgroundColor:'#2F4F4F',
         borderWidth:1.5,
         borderColor:'white',
-        //opacity:.7,
         borderRadius:20,
-        //justifyContent:'space-between',
-        //marginRight:10,
         alignItems:"center",
         alignContent:"center",
         fontSize:40,
         marginHorizontal:8,
     },
     weeklyForcast:{
-        //alignSelf:"center",
         fontSize:20,
         color:'white',
         flexDirection:"row",
@@ -349,13 +271,9 @@ const styles=StyleSheet.create({
     forcastB:{
         width:100,
         height:180,
-        //backgroundColor:'#2F4F4F',
         borderWidth:1.5,
         borderColor:'white',
-        //opacity:.7,
         borderRadius:20,
-        //justifyContent:'space-between',
-        //marginRight:10,
         alignItems:"center",
         alignContent:"center",
         fontSize:40,
