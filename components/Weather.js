@@ -5,9 +5,9 @@ import {snow_day} from "../assets/backgrounds";
 const API_Key="a6eca899a628a79d89f4879f54cd23a3";
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
-import WeekForecast from "./weeklyForcast";
-import HourlyForecast from "./HourlyForecast";
-import TopWeatherIcon from "./TopWeatherIcon";
+import WeekForecast from "./SubComponents/weeklyForcast";
+import HourlyForecast from "./SubComponents/HourlyForecast";
+import TopWeatherIcon from "./SubComponents/TopWeatherIcon";
 import {useSelector} from 'react-redux'
 import { useDispatch } from "react-redux";
 import { AddCityData} from "../components/redux/action";
@@ -16,6 +16,8 @@ import { starReducer } from "./redux/reducer";
 import TopWeatherBar from "./SubComponents/TopWeatherBar";
 import store from "./redux/storeRedux";
 import unitCheck from "../Functions/unitCheck";
+import { getUsersFetch } from "../components/redux/action";
+
 
 
 const Weather = (props) => {
@@ -26,10 +28,11 @@ const Weather = (props) => {
     const dataCity=useSelector((state)=>state.cityReducer)
     const dataUnit=useSelector((state)=>state.unitReducer)
     const dataStar=useSelector((state)=>state.starReducer)
+    const dataWeather=useSelector((state)=>state.dataReducer.users);
+    
     
     async function getWeatherData(cityName,myVal){
-        state=store.getState();
-        setloading(true);
+        
         const API=`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_Key}&units=${myVal}`;
         let res=await fetch(API);
         if(res.status==200)
@@ -51,10 +54,13 @@ const Weather = (props) => {
     useEffect(() => {
         getWeatherData(dataCity,dataUnit);
         fetchFirebaseData();
+        //dispatch(getUsersFetch());
+        //console.log('comp: '+dataWeather);
         
         props.myData(WeatherData);
         props.myData2(WeatherData);
         props.background(getMyImage);
+        //console.log('daata:'+dataWeather);
 
     }, [dataCity, dataUnit,starReducer])
 

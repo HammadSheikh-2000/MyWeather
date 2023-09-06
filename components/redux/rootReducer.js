@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux'
-import {reducer,cityReducer,unitReducer,dbReducer,starReducer} from './reducer'
+import {reducer,cityReducer,unitReducer,dbReducer,starReducer,dataReducer} from './reducer'
 
 
 export default rootReducer=combineReducers({
@@ -8,5 +8,7 @@ export default rootReducer=combineReducers({
     unitReducer,
     dbReducer,
     starReducer,
+    dataReducer
+    
 }
 )

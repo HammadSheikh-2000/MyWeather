@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { Fontisto } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import {clear_day, bg,clear_night, cloud_day, rain_night,cloud_night, haze_day, haze_night, rain_day, snow_day, snow_night} from "../assets/backgrounds";
+import { clear_day, bg,clear_night, cloud_day, rain_night,cloud_night, haze_day, haze_night, rain_day, snow_day, snow_night } from "../../assets/backgrounds";
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 

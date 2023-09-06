@@ -4,13 +4,17 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { AddCityData,AddUnitData } from "../redux/action";
 import { Feather } from '@expo/vector-icons';
+import { getUsersFetch } from "../redux/action";
+import {useSelector} from 'react-redux'
 
 const TopNavBar = (props) => {
-
+    
+    //const dataWeather=useSelector((state)=>state.dataReducer.users);
     const dispatch=useDispatch();
     const [getCity,setCity]=useState('Lahore');
     const [tmepType,setTempType]=useState('metric');
     const [tempText,setTempText]=useState('');
+    
 
 
     handlingDataCahnge=()=>{
@@ -65,6 +69,7 @@ const TopNavBar = (props) => {
                 setTempText('');
                 props.navigating.navigate("MyMain");
             }
+            
         }
         
         else{
@@ -76,7 +81,6 @@ const TopNavBar = (props) => {
 
     
     return ( 
-        
         <View style={{marginTop:35,marginBottom:35}}>
         <SafeAreaView>
             <View style={{flexDirection:"row",justifyContent:"space-between"}}>

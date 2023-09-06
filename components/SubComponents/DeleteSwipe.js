@@ -1,7 +1,7 @@
 
 import { GestureHandlerRootView,Swipeable} from "react-native-gesture-handler";
 import { TouchableOpacity,ScrollView,View,style,StyleSheet } from "react-native";
-import FavouriteCard from "../FavouriteCard";
+import FavouriteCard from "./FavouriteCard";
 import {useSelector} from 'react-redux';
 import { useDispatch } from "react-redux";
 import { MaterialIcons } from '@expo/vector-icons';

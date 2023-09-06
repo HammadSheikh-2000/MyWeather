@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { View,Text,StyleSheet,Dimensions,ActivityIndicator,ImageBackground} from "react-native";
 import { useState } from "react";
-import { bg } from "../assets/backgrounds";
+import { bg } from "../../assets/backgrounds";
 const API_Key="a6eca899a628a79d89f4879f54cd23a3";
 
 const FavouriteCard = (props) => {
