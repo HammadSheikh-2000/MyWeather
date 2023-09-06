@@ -1,22 +1,22 @@
 import { View,Text,StyleSheet,ImageBackground,Dimensions, ActivityIndicator, ScrollView } from "react-native";
 import { useEffect, useState } from "react";
 import { AntDesign } from '@expo/vector-icons';
-import {snow_day} from "../assets/backgrounds";
+import {snow_day} from "../../assets/backgrounds";
 const API_Key="a6eca899a628a79d89f4879f54cd23a3";
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
-import WeekForecast from "./SubComponents/weeklyForcast";
-import HourlyForecast from "./SubComponents/HourlyForecast";
-import TopWeatherIcon from "./SubComponents/TopWeatherIcon";
+import WeekForecast from "../SubComponents/weeklyForcast";
+import HourlyForecast from "../SubComponents/HourlyForecast";
+import TopWeatherIcon from "../SubComponents/TopWeatherIcon";
 import {useSelector} from 'react-redux'
 import { useDispatch } from "react-redux";
-import { AddCityData} from "../components/redux/action";
-import fetchFirebaseData from "../db/firebase";
-import { starReducer } from "./redux/reducer";
-import TopWeatherBar from "./SubComponents/TopWeatherBar";
-import store from "./redux/storeRedux";
-import unitCheck from "../Functions/unitCheck";
-import { getUsersFetch } from "../components/redux/action";
+import { AddCityData} from "../redux/action";
+import fetchFirebaseData from "../../db/firebase";
+import { starReducer } from "../redux/reducer";
+import TopWeatherBar from "../SubComponents/TopWeatherBar";
+import store from "../redux/storeRedux";
+import unitCheck from "../../Functions/unitCheck";
+import { getUsersFetch } from "../redux/action";
 
 
 

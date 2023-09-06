@@ -1,10 +1,10 @@
 import {View,ImageBackground} from "react-native";
 import {useEffect} from "react";
 import React from "react";
-import { bg } from "../assets/backgrounds";
-import fetchFirebaseData from "../db/firebase";
-import TopNavBar from "./SubComponents/TopNavBar";
-import DeleteSwipe from "./SubComponents/DeleteSwipe";
+import { bg } from "../../assets/backgrounds";
+import fetchFirebaseData from "../../db/firebase";
+import TopNavBar from "../SubComponents/TopNavBar";
+import DeleteSwipe from "../SubComponents/DeleteSwipe";
 
 const SearchBAr = (props) => {
     useEffect(()=>{

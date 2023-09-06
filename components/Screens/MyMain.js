@@ -1,14 +1,8 @@
 
 import { StyleSheet ,Text, View, StatusBar,ImageBackground, Dimensions,ListView, ScrollView, SafeAreaView} from 'react-native';
 import { useState } from "react";
-import{KeyboardAwareScrollView} from 'react-native';
-import SearchBAr from './components/SearchBar';
-import Weather from './components/Weather';
+import Weather from './Weather';
 import { useRoute } from '@react-navigation/native';
-
-import {createNativeStackNavigator} from '@react-navigation/native-stack'
-import{NavigationContainer} from '@react-navigation/native'
-import App from './App';
 
 const MyMain = (props) => {
 
