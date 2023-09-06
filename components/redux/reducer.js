@@ -1,4 +1,4 @@
-import { AddWeatherData,AddCity,AddUnit,AddDb,AddStar, SetUserData,GET_USER_FETCH } from "./constants";
+import { AddWeatherData,AddCity,AddUnit,AddDb,AddStar, SetUserData,GET_USER_FETCH,GET_USER_SUCCESS } from "./constants";
 
 const init=[];
 const initialState=[];
@@ -44,12 +44,12 @@ export const unitReducer = (state = "", action) => {
     }
     
   };
-  export const dataReducer = (state = {users:[]}, action) => {
+  export const dataReducer = (state = { users: [] }, action) => {
     switch (action.type) {
-      case GET_USER_FETCH:
-        return {...state,users:action.users};
+      case GET_USER_SUCCESS:
+        return { ...state, users: action.user };
       default:
         return state;
     }
-    
   };
+  

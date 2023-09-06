@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
-import { User_List,AddWeatherData,SetUserData,GET_USER_FETCH,GET_USER_SUCCESS } from "./constants";
-import {takeEvery,put,call} from 'redux-saga/effects';
+import { GET_USER_FETCH,GET_USER_SUCCESS } from "./constants";
+import {takeEvery,put,call, takeLatest} from 'redux-saga/effects';
 import store from "./storeRedux";
 import { API_Key } from "../../constants";
-import { AddCityData } from "./action";
+import ApiCall from "../../Utility/API/ApiCall";
 
 
 
@@ -11,24 +11,19 @@ function userFetch(){
     const state=store.getState();
     const cityName=state.cityReducer;
     const myVal=state.unitReducer;
-    //console.log(cityName);
-    const API=`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_Key}&units=${myVal}`;
-
+    const API=ApiCall();
     return fetch(API).then(response=>response.json());
 }
 
-function*userList(action){
+function*userList(){
         
-   
-            let res=yield call(userFetch);
-            //console.log('checking')
-            //store.dispatch(AddCityData(res.city.name)) 
-            yield put({type:GET_USER_FETCH,res})
+            const res=yield call(userFetch);
+            yield put({type:GET_USER_SUCCESS,user:res})
 }
 
 
 function* SagaData(){
-    yield takeEvery(GET_USER_FETCH,userList);
+    yield takeLatest(GET_USER_FETCH,userList);
 
 }
 export default SagaData;

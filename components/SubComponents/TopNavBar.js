@@ -1,11 +1,14 @@
 import { View,SafeAreaView,TextInput,StyleSheet,Dimensions,Alert } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { AddCityData,AddUnitData } from "../redux/action";
 import { Feather } from '@expo/vector-icons';
 import { getUsersFetch } from "../redux/action";
 import {useSelector} from 'react-redux'
+import { GET_USER_FETCH, GET_USER_SUCCESS } from "../redux/constants";
+import store from "../redux/storeRedux";
+
 
 const TopNavBar = (props) => {
     
@@ -14,9 +17,13 @@ const TopNavBar = (props) => {
     const [getCity,setCity]=useState('Lahore');
     const [tmepType,setTempType]=useState('metric');
     const [tempText,setTempText]=useState('');
-    
+    state=store.getState();
+    const users = useSelector((state) => state.dataReducer.users);
 
 
+    useEffect(()=>{
+        dispatch(getUsersFetch());
+    },[users])
     handlingDataCahnge=()=>{
         Alert.alert(
             'Please Choose and Option',
@@ -64,6 +71,8 @@ const TopNavBar = (props) => {
             const val=getCity.trim();
             dispatch(AddCityData(val));
             dispatch(AddUnitData(tmepType));
+            dispatch(getUsersFetch());
+            //console.log('City data: '+users.list[0].main.temp)
             if(val.length!=0)
             {
                 setTempText('');

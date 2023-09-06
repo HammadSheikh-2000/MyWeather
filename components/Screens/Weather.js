@@ -28,7 +28,8 @@ const Weather = (props) => {
     const dataCity=useSelector((state)=>state.cityReducer)
     const dataUnit=useSelector((state)=>state.unitReducer)
     const dataStar=useSelector((state)=>state.starReducer)
-    const dataWeather=useSelector((state)=>state.dataReducer.users);
+    const users = useSelector((state) => state.dataReducer.users);
+   
     
     
     async function getWeatherData(cityName,myVal){
@@ -54,6 +55,8 @@ const Weather = (props) => {
     useEffect(() => {
         getWeatherData(dataCity,dataUnit);
         fetchFirebaseData();
+        //dispatch(getUsersFetch());
+        //console.log('City data: '+users.list[0].main.temp);
         //dispatch(getUsersFetch());
         //console.log('comp: '+dataWeather);
         

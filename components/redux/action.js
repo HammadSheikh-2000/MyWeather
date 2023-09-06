@@ -1,4 +1,4 @@
-import { AddWeatherData,AddCity,AddUnit,AddDb,AddStar,SetUserData, User_List,GET_USER_FETCH } from "./constants";
+import { AddWeatherData,AddCity,AddUnit,AddDb,AddStar,SetUserData, User_List,GET_USER_FETCH,GET_USER_SUCCESS } from "./constants";
 
 export const AddWeather=(data)=>{
     return{
@@ -32,7 +32,10 @@ export const AddStartData=(data)=>{
 }
 export const getUsersFetch=(data)=>{
     return{
-        type:GET_USER_FETCH,
-        data:data
-    }
-}
+    type:GET_USER_FETCH,
+    data:data
+}}
+export const setUser=(user)=>({
+    type:GET_USER_SUCCESS,
+    user:user
+});
