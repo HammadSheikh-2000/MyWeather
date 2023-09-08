@@ -21,9 +21,6 @@ const TopNavBar = (props) => {
     const users = useSelector((state) => state.dataReducer.users);
 
 
-    useEffect(()=>{
-        dispatch(getUsersFetch());
-    },[users])
     handlingDataCahnge=()=>{
         Alert.alert(
             'Please Choose and Option',
@@ -71,10 +68,10 @@ const TopNavBar = (props) => {
             const val=getCity.trim();
             dispatch(AddCityData(val));
             dispatch(AddUnitData(tmepType));
-            dispatch(getUsersFetch());
-            //console.log('City data: '+users.list[0].main.temp)
+            console.log('userOfTopNav: '+users.status)
             if(val.length!=0)
             {
+                dispatch(getUsersFetch());
                 setTempText('');
                 props.navigating.navigate("MyMain");
             }

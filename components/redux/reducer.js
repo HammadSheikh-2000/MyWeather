@@ -47,7 +47,7 @@ export const unitReducer = (state = "", action) => {
   export const dataReducer = (state = { users: [] }, action) => {
     switch (action.type) {
       case GET_USER_SUCCESS:
-        return { ...state, users: action.user };
+        return {users: action.user };
       default:
         return state;
     }

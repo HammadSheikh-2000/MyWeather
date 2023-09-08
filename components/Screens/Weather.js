@@ -28,14 +28,18 @@ const Weather = (props) => {
     const dataCity=useSelector((state)=>state.cityReducer)
     const dataUnit=useSelector((state)=>state.unitReducer)
     const dataStar=useSelector((state)=>state.starReducer)
+    state=store.getState();
     const users = useSelector((state) => state.dataReducer.users);
    
     
     
     async function getWeatherData(cityName,myVal){
-        
+        //dispatch(getUsersFetch());
         const API=`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_Key}&units=${myVal}`;
         let res=await fetch(API);
+        console.log('user: '+users.status)
+        console.log('weather: '+res.status)
+        
         if(res.status==200)
         {
             res= await res.json();

@@ -44,20 +44,14 @@ const DeleteSwipe = (props) => {
             <ScrollView showsVerticalScrollIndicator={false}>
             {
                     dataDB.map((item, index) => (
-                    <GestureHandlerRootView>
-
+                    <GestureHandlerRootView key={item.title}>
                     <Swipeable  renderRightActions={()=>checking(item.title)}>
-                    
                     <TouchableOpacity
-                    
-                    key={index}
                     onPress={() => handleItemClick(item.title)}>
-                    
                     <FavouriteCard city={item.title}/>
                     </TouchableOpacity>
                     </Swipeable>
                     </GestureHandlerRootView>
-                    
                     ))}
             </ScrollView>
      );
