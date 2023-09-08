@@ -61,7 +61,7 @@ handleChangeOfScreen=()=>{
         <View>
         <ImageBackground resizeMode='cover' source={mybackImag} blurRadius={40} >
         <SafeAreaView style={{backgroundColor:mybackImag}}>
-        <StatusBar barStyle="default"/>
+        <StatusBar backgroundColor={'#46C9FC'} barStyle="auto"/>
         <View>
         <Weather  myNav={handleChangeOfScreen} myUpdate={getUpdated} size={handleSize} background={backgroundHandler} myData={handleData} myData2={handleData} added={handleAddition}/>
         </View>

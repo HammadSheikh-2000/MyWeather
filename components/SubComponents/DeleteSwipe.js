@@ -33,7 +33,7 @@ const DeleteSwipe = (props) => {
       };
     handleItemClick = (item) => {
         dispatch(AddCityData(item)),
-        dispatch(AddUnitData(state.unitReducer)),
+        dispatch(AddUnitData('metric'))
         props.navigating.navigate("MyMain");
         
       };

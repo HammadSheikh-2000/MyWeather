@@ -9,4 +9,8 @@ export default function ApiCall(){
     const API=`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_Key}&units=${myVal}`;
     //console.log(API)
     return API;
+};
+export function ApiCallWithPara(cityName,myVal){
+    const API=`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_Key}&units=${myVal}`;
+    return API;
 }

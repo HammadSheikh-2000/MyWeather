@@ -87,7 +87,7 @@ const TopNavBar = (props) => {
 
     
     return ( 
-        <View style={{marginTop:35,marginBottom:35}}>
+        <View style={{marginTop:45,marginBottom:35}}>
         <SafeAreaView>
             <View style={{flexDirection:"row",justifyContent:"space-between"}}>
             <View style={{marginLeft:15}}>

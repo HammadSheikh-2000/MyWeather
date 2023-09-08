@@ -5,6 +5,7 @@ import { bg } from "../../assets/backgrounds";
 import fetchFirebaseData from "../../db/firebase";
 import TopNavBar from "../SubComponents/TopNavBar";
 import DeleteSwipe from "../SubComponents/DeleteSwipe";
+import { StatusBar } from "expo-status-bar";
 
 const SearchBAr = (props) => {
     useEffect(()=>{
@@ -13,6 +14,7 @@ const SearchBAr = (props) => {
     return (
         
         <View style={{flex:1,marginTop:0,backgroundColor:'#dcdcdc'}}>
+        <StatusBar backgroundColor="#00323A"  barStyle="light"/>
         <ImageBackground style={{flex:1}} resizeMode="cover" blurRadius={50} source={bg}>
         <TopNavBar navigating={props.navigation}/>
         <View style={{flex:1}}>

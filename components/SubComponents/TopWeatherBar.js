@@ -16,7 +16,7 @@ const TopWeatherBar = (props) => {
         props.myNav(true);
     }
     return ( 
-        <View style={{flexDirection:"row"}}>
+        <View style={{flexDirection:"row",marginTop:10}}>
                 <View style={{ justifyContent: 'center', alignItems: 'center', paddingTop: 20, paddingLeft: 20,}}>
                         {state.starReducer ? 
                         (<FontAwesome style={{marginRight:10}} name="star" size={30} color="gold" onPress={deleteItemFromList}/>):

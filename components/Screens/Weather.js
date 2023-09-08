@@ -17,6 +17,8 @@ import TopWeatherBar from "../SubComponents/TopWeatherBar";
 import store from "../redux/storeRedux";
 import unitCheck from "../../Functions/unitCheck";
 import { getUsersFetch } from "../redux/action";
+import { ApiCallWithPara } from "../../Utility/API/ApiCall";
+import { StatusBar } from "expo-status-bar";
 
 
 
@@ -34,12 +36,8 @@ const Weather = (props) => {
     
     
     async function getWeatherData(cityName,myVal){
-        //dispatch(getUsersFetch());
-        const API=`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_Key}&units=${myVal}`;
+        const API=ApiCallWithPara(cityName,myVal);
         let res=await fetch(API);
-        console.log('user: '+users.status)
-        console.log('weather: '+res.status)
-        
         if(res.status==200)
         {
             res= await res.json();
@@ -59,15 +57,9 @@ const Weather = (props) => {
     useEffect(() => {
         getWeatherData(dataCity,dataUnit);
         fetchFirebaseData();
-        //dispatch(getUsersFetch());
-        //console.log('City data: '+users.list[0].main.temp);
-        //dispatch(getUsersFetch());
-        //console.log('comp: '+dataWeather);
-        
         props.myData(WeatherData);
         props.myData2(WeatherData);
         props.background(getMyImage);
-        //console.log('daata:'+dataWeather);
 
     }, [dataCity, dataUnit,starReducer])
 
@@ -95,6 +87,7 @@ const Weather = (props) => {
         }
         return ( 
             <View>
+           <StatusBar backgroundColor={'#46C9FC'} barStyle="default"/>
             <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false} automaticallyAdjustKeyboardInsets={false}>
             <TopWeatherBar myNav={props.myNav}/>
                 <View>

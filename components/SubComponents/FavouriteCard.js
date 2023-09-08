@@ -3,6 +3,7 @@ import { View,Text,StyleSheet,Dimensions,ActivityIndicator,ImageBackground} from
 import { useState } from "react";
 import { bg } from "../../assets/backgrounds";
 const API_Key="a6eca899a628a79d89f4879f54cd23a3";
+import { Entypo } from '@expo/vector-icons';
 const FavouriteCard = (props) => {
 
     const[WeatherData,setWeatherData]=useState(null);
@@ -62,7 +63,7 @@ const FavouriteCard = (props) => {
                     
         <View style={{flexDirection:"column"}}>
         <Text style={styles.modelText}>{props.city}</Text>
-        <Text style={styles.TimeText}>3:14 PM</Text>
+        <Text style={styles.TimeText}>Humidity {WeatherData.list[0].main.humidity}%</Text>
         <Text style={styles.WeatherText}>{WeatherData.list[0].weather[0].main}</Text>
 
         </View>
@@ -105,7 +106,7 @@ const styles=StyleSheet.create({
         marginTop:10,
         marginLeft:10,
         color:'white',
-        alignSelf:"center",
+        //alignSelf:"center",
         justifyContent:"center",
         alignItems:"center",
         alignContent:"center",
